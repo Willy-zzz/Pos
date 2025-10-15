@@ -1,0 +1,24 @@
+# Archivos temporales
+/dist
+/build
+*.pyc
+__pycache__/
+*.log
+*.spec
+
+# Archivos de entorno
+.env
+.venv/
+automa/
+
+# Archivos de salida
+*.exe
+*.zip
+*.bat
+*.png
+*.ico
+
+
+# Documentos de Word y Excel
+*.docx
+*.xlsx
