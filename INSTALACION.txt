@@ -1,0 +1,155 @@
+=================================================================
+GUÍA DE INSTALACIÓN - SISTEMA POS DEPILACIÓN LÁSER
+=================================================================
+
+⚠️ IMPORTANTE: ESTE PROYECTO REQUIERE CODEIGNITER 3
+=================================================================
+
+PASO 0: DESCARGAR CODEIGNITER 3
+-----------------------------------------------------------------
+1. Ve a: https://codeigniter.com/userguide3/installation/downloads.html
+2. Descarga "CodeIgniter 3.1.13" (o la versión más reciente de CI3)
+3. Extrae el archivo ZIP descargado
+4. Dentro encontrarás las carpetas: application, system, user_guide
+
+PASO 1: INSTALAR XAMPP
+-----------------------------------------------------------------
+1. Descarga XAMPP desde: https://www.apachefriends.org/
+2. Ejecuta el instalador
+3. Instala en la ruta por defecto: C:\xampp\
+4. Inicia Apache y MySQL desde el Panel de Control de XAMPP
+
+PASO 2: INTEGRAR CODEIGNITER CON EL PROYECTO
+-----------------------------------------------------------------
+1. Crea una carpeta en: C:\xampp\htdocs\pos-laser\
+2. Copia la carpeta "system" de CodeIgniter a: C:\xampp\htdocs\pos-laser\system\
+3. Copia TODOS los archivos de este proyecto a: C:\xampp\htdocs\pos-laser\
+4. La estructura final debe ser:
+   C:\xampp\htdocs\pos-laser\
+   ├── system/              (de CodeIgniter)
+   ├── application/         (de este proyecto)
+   ├── assets/              (de este proyecto)
+   ├── database/            (de este proyecto)
+   ├── index.php            (de este proyecto)
+   ├── .htaccess            (de este proyecto)
+   └── composer.json        (de este proyecto)
+
+PASO 3: CREAR LA BASE DE DATOS
+-----------------------------------------------------------------
+1. Abre tu navegador
+2. Ve a: http://localhost/phpmyadmin
+3. Haz clic en "Nueva" en el panel izquierdo
+4. Nombre de la base de datos: pos_laser_depilacion
+5. Cotejamiento: utf8_general_ci
+6. Haz clic en "Crear"
+7. Selecciona la base de datos creada
+8. Haz clic en "Importar" en el menú superior
+9. Selecciona el archivo: database/pos_laser.sql
+10. Haz clic en "Continuar"
+11. Espera a que termine la importación
+
+PASO 4: VERIFICAR CONFIGURACIÓN
+-----------------------------------------------------------------
+1. Abre el archivo: application/config/database.php
+2. Verifica que los datos sean:
+   - hostname: localhost
+   - username: root
+   - password: (dejar vacío)
+   - database: pos_laser_depilacion
+
+3. Abre el archivo: application/config/config.php
+4. Verifica que la URL base sea:
+   $config['base_url'] = 'http://localhost/pos-laser/';
+
+PASO 5: INSTALAR DEPENDENCIAS (OPCIONAL)
+-----------------------------------------------------------------
+Si tienes Composer instalado:
+1. Abre CMD o PowerShell
+2. Navega a: cd C:\xampp\htdocs\pos-laser
+3. Ejecuta: composer install
+4. Esto instalará las librerías para generar PDFs
+
+Si NO tienes Composer, el sistema funcionará igual pero sin 
+generación de PDFs avanzados.
+
+PASO 6: ACCEDER AL SISTEMA
+-----------------------------------------------------------------
+1. Abre tu navegador
+2. Ve a: http://localhost/pos-laser/
+3. Inicia sesión con:
+   Usuario: admin
+   Contraseña: admin123
+
+PASO 7: CONFIGURAR IMPRESORA (OPCIONAL)
+-----------------------------------------------------------------
+1. Conecta tu impresora térmica
+2. Instala los drivers del fabricante
+3. Configura como impresora predeterminada
+4. En el sistema, ve a Configuración > Negocio
+5. Activa la impresión automática
+
+=================================================================
+SOLUCIÓN DE PROBLEMAS COMUNES
+=================================================================
+
+PROBLEMA: "La carpeta del sistema no existe: system"
+SOLUCIÓN: 
+- Asegúrate de haber copiado la carpeta "system" de CodeIgniter
+- Verifica que la ruta sea: C:\xampp\htdocs\pos-laser\system\
+- Descarga CodeIgniter 3 si no lo has hecho
+
+PROBLEMA: "404 Not Found" al acceder
+SOLUCIÓN: 
+- Verifica que mod_rewrite esté habilitado en Apache
+- Asegúrate de que el archivo .htaccess esté en la raíz
+- Edita C:\xampp\apache\conf\httpd.conf
+- Busca "LoadModule rewrite_module" y quita el # si lo tiene
+- Reinicia Apache desde el panel de XAMPP
+
+PROBLEMA: Error de conexión a base de datos
+SOLUCIÓN:
+- Verifica que MySQL esté corriendo en XAMPP
+- Confirma que la base de datos se importó correctamente
+- Revisa las credenciales en config/database.php
+- Asegúrate de que el nombre sea: pos_laser_depilacion
+
+PROBLEMA: No carga los estilos CSS
+SOLUCIÓN:
+- Verifica la URL base en config/config.php
+- Debe ser: http://localhost/pos-laser/
+- Asegúrate de que la carpeta assets/ exista
+
+PROBLEMA: No imprime tickets
+SOLUCIÓN:
+- Verifica que la impresora esté conectada
+- Configura la impresora como predeterminada en Windows
+- Prueba imprimir desde el navegador (Ctrl+P)
+- Verifica que JavaScript esté habilitado
+
+PROBLEMA: Error "Class 'CI_Controller' not found"
+SOLUCIÓN:
+- Falta la carpeta system de CodeIgniter
+- Descarga CodeIgniter 3 y copia la carpeta system
+
+=================================================================
+ENLACES ÚTILES
+=================================================================
+
+CodeIgniter 3 Download:
+https://codeigniter.com/userguide3/installation/downloads.html
+
+XAMPP Download:
+https://www.apachefriends.org/
+
+Documentación CodeIgniter 3:
+https://codeigniter.com/userguide3/
+
+=================================================================
+CONTACTO Y SOPORTE
+=================================================================
+
+Para soporte técnico adicional, consulta el archivo README.md
+o contacta al desarrollador del sistema.
+
+¡Gracias por usar nuestro Sistema POS!
+=================================================================

@@ -1,0 +1,125 @@
+=================================================================
+CÓMO DESCARGAR E INSTALAR CODEIGNITER 3
+=================================================================
+
+Este proyecto requiere CodeIgniter 3 para funcionar. Sigue estos
+pasos para descargarlo e integrarlo correctamente.
+
+PASO 1: DESCARGAR CODEIGNITER 3
+-----------------------------------------------------------------
+Opción A - Sitio Oficial (Recomendado):
+1. Ve a: https://codeigniter.com/userguide3/installation/downloads.html
+2. Haz clic en "Download CodeIgniter 3.1.13"
+3. Se descargará un archivo: CodeIgniter-3.1.13.zip
+
+Opción B - GitHub:
+1. Ve a: https://github.com/bcit-ci/CodeIgniter/releases
+2. Busca la versión 3.1.13 (o la más reciente de la rama 3.x)
+3. Descarga el archivo Source code (zip)
+
+PASO 2: EXTRAER CODEIGNITER
+-----------------------------------------------------------------
+1. Localiza el archivo descargado (CodeIgniter-3.1.13.zip)
+2. Haz clic derecho > Extraer todo
+3. Extrae en una carpeta temporal (ej: C:\Temp\CodeIgniter)
+4. Dentro encontrarás estas carpetas:
+   - application/
+   - system/          ← Esta es la que necesitamos
+   - user_guide/
+
+PASO 3: COPIAR LA CARPETA SYSTEM
+-----------------------------------------------------------------
+1. Abre la carpeta extraída de CodeIgniter
+2. Localiza la carpeta "system"
+3. Copia TODA la carpeta "system"
+4. Pégala en: C:\xampp\htdocs\pos-laser\
+
+   Resultado final:
+   C:\xampp\htdocs\pos-laser\
+   ├── system\          ← Carpeta de CodeIgniter
+   │   ├── core\
+   │   ├── database\
+   │   ├── helpers\
+   │   ├── language\
+   │   └── libraries\
+   ├── application\     ← Tu aplicación
+   ├── assets\
+   └── index.php
+
+PASO 4: VERIFICAR LA INSTALACIÓN
+-----------------------------------------------------------------
+1. Abre el archivo: C:\xampp\htdocs\pos-laser\index.php
+2. Busca esta línea (alrededor de la línea 90):
+   $system_path = 'system';
+3. Debe apuntar a la carpeta que acabas de copiar
+
+4. Verifica que exista el archivo:
+   C:\xampp\htdocs\pos-laser\system\core\CodeIgniter.php
+   
+   Si existe, ¡la instalación es correcta!
+
+PASO 5: PROBAR EL SISTEMA
+-----------------------------------------------------------------
+1. Asegúrate de que Apache y MySQL estén corriendo en XAMPP
+2. Abre tu navegador
+3. Ve a: http://localhost/pos-laser/
+4. Si ves la página de login, ¡todo está funcionando!
+
+=================================================================
+SOLUCIÓN DE PROBLEMAS
+=================================================================
+
+PROBLEMA: "La carpeta del sistema no existe: system"
+SOLUCIÓN:
+- Verifica que copiaste la carpeta "system" completa
+- La ruta debe ser: C:\xampp\htdocs\pos-laser\system\
+- Dentro debe haber subcarpetas: core, database, helpers, etc.
+
+PROBLEMA: "Unable to load the requested file: core/CodeIgniter.php"
+SOLUCIÓN:
+- La carpeta system está incompleta o mal copiada
+- Vuelve a descargar CodeIgniter y copia la carpeta system completa
+
+PROBLEMA: Página en blanco al acceder
+SOLUCIÓN:
+- Activa la visualización de errores en PHP
+- Edita C:\xampp\php\php.ini
+- Busca: display_errors = Off
+- Cambia a: display_errors = On
+- Reinicia Apache
+
+=================================================================
+INFORMACIÓN ADICIONAL
+=================================================================
+
+¿Por qué necesito CodeIgniter?
+- CodeIgniter es el framework PHP en el que está construido el sistema
+- La carpeta "system" contiene el núcleo del framework
+- Sin ella, el sistema no puede funcionar
+
+¿Puedo usar CodeIgniter 4?
+- NO. Este proyecto está desarrollado para CodeIgniter 3
+- CodeIgniter 4 tiene una estructura completamente diferente
+- Debes usar CodeIgniter 3.1.x
+
+Tamaño de la carpeta system:
+- Aproximadamente 3-4 MB
+- Contiene alrededor de 200 archivos PHP
+
+Versión recomendada:
+- CodeIgniter 3.1.13 (última versión estable de CI3)
+
+=================================================================
+ENLACES DIRECTOS
+=================================================================
+
+Descarga oficial CI3:
+https://codeigniter.com/userguide3/installation/downloads.html
+
+GitHub Releases:
+https://github.com/bcit-ci/CodeIgniter/releases
+
+Documentación CI3:
+https://codeigniter.com/userguide3/
+
+=================================================================

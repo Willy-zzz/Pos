@@ -1,0 +1,191 @@
+ESTRUCTURA DEL PROYECTO POS LASER
+==================================
+
+pos-laser-depilacion/
+│
+├── index.php                          # Punto de entrada principal de CodeIgniter
+├── .htaccess                          # Configuración de Apache para URLs amigables
+├── composer.json                      # Dependencias PHP (TCPDF)
+├── README.md                          # Documentación del proyecto
+├── INSTALACION.txt                    # Guía de instalación paso a paso
+├── ESTRUCTURA.txt                     # Este archivo
+│
+├── application/                       # Carpeta de la aplicación
+│   ├── config/                        # Archivos de configuración
+│   │   ├── autoload.php              # Librerías y helpers cargados automáticamente
+│   │   ├── config.php                # Configuración general
+│   │   ├── database.php              # Configuración de base de datos
+│   │   └── routes.php                # Rutas de la aplicación
+│   │
+│   ├── controllers/                   # Controladores MVC
+│   │   ├── Auth.php                  # Login y autenticación
+│   │   ├── Dashboard.php             # Panel principal
+│   │   ├── Clientes.php              # Gestión de clientes
+│   │   ├── Productos.php             # Gestión de productos/servicios
+│   │   ├── Ventas.php                # Sistema de ventas y POS
+│   │   ├── Reportes.php              # Reportes y estadísticas
+│   │   └── Configuracion.php         # Configuración del sistema
+│   │
+│   ├── models/                        # Modelos de datos
+│   │   ├── Usuario_model.php         # Modelo de usuarios
+│   │   ├── Cliente_model.php         # Modelo de clientes
+│   │   ├── Producto_model.php        # Modelo de productos
+│   │   ├── Categoria_model.php       # Modelo de categorías
+│   │   ├── Venta_model.php           # Modelo de ventas
+│   │   ├── Configuracion_model.php   # Modelo de configuración
+│   │   └── Plantilla_model.php       # Modelo de plantillas
+│   │
+│   ├── views/                         # Vistas HTML
+│   │   ├── templates/                # Plantillas reutilizables
+│   │   │   ├── header.php           # Encabezado
+│   │   │   ├── sidebar.php          # Menú lateral
+│   │   │   └── footer.php           # Pie de página
+│   │   │
+│   │   ├── auth/                     # Vistas de autenticación
+│   │   │   └── login.php            # Página de login
+│   │   │
+│   │   ├── dashboard/                # Vistas del dashboard
+│   │   │   └── index.php            # Panel principal
+│   │   │
+│   │   ├── clientes/                 # Vistas de clientes
+│   │   │   ├── index.php            # Listado de clientes
+│   │   │   └── form.php             # Formulario crear/editar
+│   │   │
+│   │   ├── productos/                # Vistas de productos
+│   │   │   ├── index.php            # Listado de productos
+│   │   │   └── form.php             # Formulario crear/editar
+│   │   │
+│   │   ├── ventas/                   # Vistas de ventas
+│   │   │   ├── index.php            # Historial de ventas
+│   │   │   ├── nueva.php            # Interfaz POS
+│   │   │   ├── ver.php              # Detalle de venta
+│   │   │   ├── ticket.php           # Plantilla de ticket
+│   │   │   └── contrato.php         # Plantilla de contrato
+│   │   │
+│   │   ├── reportes/                 # Vistas de reportes
+│   │   │   ├── index.php            # Dashboard de reportes
+│   │   │   └── ventas.php           # Reporte de ventas
+│   │   │
+│   │   └── configuracion/            # Vistas de configuración
+│   │       ├── index.php            # Menú de configuración
+│   │       ├── negocio.php          # Datos del negocio
+│   │       ├── plantillas.php       # Gestión de plantillas
+│   │       ├── editar_plantilla.php # Editor de plantillas
+│   │       ├── usuarios.php         # Gestión de usuarios
+│   │       └── form_usuario.php     # Formulario de usuario
+│   │
+│   ├── helpers/                       # Funciones auxiliares
+│   │   ├── pdf_helper.php           # Generación de PDFs
+│   │   └── impresion_helper.php     # Impresión térmica
+│   │
+│   ├── core/                          # Extensiones del núcleo
+│   │   └── MY_Controller.php        # Controlador base con autenticación
+│   │
+│   └── third_party/                   # Librerías de terceros
+│       └── tcpdf/                    # Librería TCPDF (instalar con Composer)
+│
+├── database/                          # Scripts de base de datos
+│   └── pos_laser.sql                 # Script de creación e inicialización
+│
+└── system/                            # Núcleo de CodeIgniter (descargar aparte)
+    └── ...                           # Archivos del framework
+
+
+FUNCIONALIDADES PRINCIPALES:
+============================
+
+1. AUTENTICACIÓN
+   - Login con usuario y contraseña
+   - Control de sesiones
+   - Roles: Administrador y Usuario
+
+2. GESTIÓN DE CLIENTES
+   - Crear, editar, eliminar clientes
+   - Búsqueda y filtrado
+   - Datos: nombre, teléfono, email, dirección, RFC
+
+3. GESTIÓN DE PRODUCTOS/SERVICIOS
+   - CRUD completo de productos
+   - Categorías
+   - Precios y tipos (producto/servicio)
+
+4. SISTEMA DE VENTAS (POS)
+   - Interfaz tipo punto de venta
+   - Carrito de compras
+   - Selección de cliente
+   - Dos métodos de pago: Efectivo y Tarjeta
+   - Cálculo automático de cambio
+   - Creación rápida de clientes
+
+5. TICKETS Y CONTRATOS
+   - Generación automática de tickets
+   - Generación de contratos personalizados
+   - Impresión térmica (80mm)
+   - Impresión en formato A4
+   - Variables dinámicas en plantillas
+
+6. REPORTES
+   - Estadísticas de ventas
+   - Filtros por fecha
+   - Exportación a Excel
+   - Gráficas de ventas
+
+7. CONFIGURACIÓN
+   - Datos del negocio
+   - Gestión de plantillas de contratos
+   - Gestión de usuarios
+   - Configuración de impresión
+
+
+TECNOLOGÍAS UTILIZADAS:
+=======================
+
+Backend:
+- PHP 7.4+
+- CodeIgniter 3.1.13
+- MySQL 5.7+
+
+Frontend:
+- Bootstrap 5.3
+- jQuery 3.6
+- Font Awesome 6.4
+- Chart.js (para gráficas)
+
+Librerías:
+- TCPDF (generación de PDFs)
+- PHPExcel (exportación a Excel)
+
+
+REQUISITOS DEL SERVIDOR:
+========================
+
+- PHP >= 7.4
+- MySQL >= 5.7
+- Apache con mod_rewrite
+- Extensiones PHP:
+  * mysqli
+  * gd
+  * mbstring
+  * json
+  * curl
+
+
+INSTALACIÓN:
+============
+
+Ver archivo INSTALACION.txt para instrucciones detalladas.
+
+
+CREDENCIALES POR DEFECTO:
+=========================
+
+Usuario: admin
+Contraseña: admin123
+
+¡IMPORTANTE! Cambiar estas credenciales después de la instalación.
+
+
+SOPORTE:
+========
+
+Para soporte técnico o consultas, contactar al desarrollador.
