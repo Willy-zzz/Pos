@@ -27,23 +27,23 @@ Sistema de Punto de Venta desarrollado en PHP con CodeIgniter 3 para tiendas de 
 ## Instalación Rápida
 
 ### 1. Descargar CodeIgniter 3
-\`\`\`
+```
 https://codeigniter.com/userguide3/installation/downloads.html
-\`\`\`
+```
 Descarga CodeIgniter 3.1.13 y extrae el archivo.
 
 ### 2. Instalar XAMPP
 Descarga e instala XAMPP desde https://www.apachefriends.org/
 
 ### 3. Integrar el proyecto
-\`\`\`
+```
 1. Crea la carpeta: C:\xampp\htdocs\pos-laser\
 2. Copia la carpeta "system" de CodeIgniter a pos-laser\
 3. Copia todos los archivos de este proyecto a pos-laser\
-\`\`\`
+```
 
 Estructura final:
-\`\`\`
+```
 C:\xampp\htdocs\pos-laser\
 ├── system/              ← De CodeIgniter
 ├── application/         ← De este proyecto
@@ -52,7 +52,7 @@ C:\xampp\htdocs\pos-laser\
 ├── index.php            ← De este proyecto
 ├── .htaccess            ← De este proyecto
 └── composer.json        ← De este proyecto
-\`\`\`
+```
 
 ### 4. Crear base de datos
 1. Abre phpMyAdmin: http://localhost/phpmyadmin
@@ -61,17 +61,17 @@ C:\xampp\htdocs\pos-laser\
 
 ### 5. Configurar la aplicación
 Edita `application/config/database.php`:
-\`\`\`php
+```php
 'hostname' => 'localhost',
 'username' => 'root',
 'password' => '',
 'database' => 'pos_laser_depilacion',
-\`\`\`
+```
 
 Edita `application/config/config.php`:
-\`\`\`php
+```php
 $config['base_url'] = 'http://localhost/pos-laser/';
-\`\`\`
+```
 
 ### 6. Acceder al sistema
 Abre tu navegador: **http://localhost/pos-laser/**
@@ -82,7 +82,7 @@ Abre tu navegador: **http://localhost/pos-laser/**
 
 ## Estructura del Proyecto
 
-\`\`\`
+```
 pos-laser/
 ├── application/
 │   ├── config/          # Configuración (database, routes, autoload)
@@ -100,7 +100,7 @@ pos-laser/
 ├── index.php           # Punto de entrada
 ├── .htaccess           # Configuración Apache (URLs amigables)
 └── composer.json       # Dependencias PHP
-\`\`\`
+```
 
 ## Módulos del Sistema
 
